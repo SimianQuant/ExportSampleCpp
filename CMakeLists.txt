@@ -22,5 +22,7 @@ gtest_add_tests(TARGET sampletest
                 TEST_LIST   noArgsTests)
 
 set_tests_properties(${noArgsTests}   PROPERTIES TIMEOUT 10)
-# gtest_add_tests(sampletest test/sampletest)
-# gtest_add_tests(sampletest test/sampletest.cpp)
+
+# benchmarking
+add_executable(samplebench bench/samplebench.cpp)
+target_link_libraries(samplebench generated benchmark pthread)
